@@ -1,0 +1,515 @@
+.quick-search-container {
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quick-search-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.quick-search-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.quick-search-subtitle {
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+/* Blood Type Section */
+.blood-type-section {
+    margin-bottom: 2rem;
+}
+
+.quick-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.75rem;
+}
+
+.blood-types-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+.blood-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border: 2px solid #fecaca;
+    color: #991b1b;
+    border-radius: 0.75rem;
+    font-weight: bold;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.blood-chip:hover {
+    border-color: #f87171;
+    background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.blood-chip.active {
+    border-color: #dc2626;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
+}
+
+.blood-chip-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.quick-error {
+    display: block;
+    font-size: 0.8125rem;
+    color: #ef4444;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* Form Grid */
+.quick-form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.quick-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.quick-input-icon {
+    position: absolute;
+    left: 0.875rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.quick-input {
+    width: 100%;
+    padding: 0.875rem 1rem 0.875rem 2.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.quick-input:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.quick-input.error {
+    border-color: #ef4444;
+}
+
+.quick-input.error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Actions */
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.quick-search-btn {
+    width: 100%;
+    padding: 1.125rem 2rem;
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    color: white;
+    border: none;
+    border-radius: 0.875rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+}
+
+.quick-search-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+    transform: translateY(-2px);
+}
+
+.quick-search-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.quick-spinner {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.quick-advanced-btn {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: white;
+    border: 2px solid #e5e7eb;
+    color: #374151;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.quick-advanced-btn:hover {
+    border-color: #8b5cf6;
+    color: #8b5cf6;
+    background: #f5f3ff;
+}
+
+.quick-advanced-btn .arrow {
+    transition: transform 0.3s ease;
+}
+
+.quick-advanced-btn:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .quick-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blood-types-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+
+    .blood-chip {
+        padding: 0.75rem 0.25rem;
+        font-size: 1rem;
+    }
+}
+
+/* Quick Form Grid with Location Button */
+.quick-form-grid-with-location {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: start;
+}
+
+/* Location Display Button - Shows GPS coordinates */
+.location-display-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 2px solid #86efac;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(134, 239, 172, 0.3);
+    animation: fadeIn 0.4s ease-out;
+    cursor: default;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.location-display-btn .location-display-icon {
+    width: 20px;
+    height: 20px;
+    color: #16a34a;
+    flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+}
+
+.location-display-btn .location-display-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.location-display-btn .location-display-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #15803d;
+    letter-spacing: 0.5px;
+}
+
+.location-display-btn .location-display-coords {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: #166534;
+}
+
+.location-field {
+    display: flex;
+    flex-direction: column;
+    /*
+    gap: 2px;
+    */
+}
+
+.location-wrapper {
+    padding-top: -10px;
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+}
+
+/* Quick Location Button Styles */
+.quick-location-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+    white-space: nowrap;
+    height: 42px;
+}
+
+.quick-location-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.quick-location-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+}
+
+.quick-location-btn:disabled {
+    background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+.quick-location-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Location Badge - Hanging from button */
+.location-badge {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 2px solid #86efac;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(134, 239, 172, 0.4);
+    z-index: 10;
+    width: max-content;
+    min-width: 280px;
+    animation: dropDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: top center;
+}
+
+/* Arrow pointing to button */
+.location-badge::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #86efac;
+}
+
+.location-badge::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #f0fdf4;
+    margin-bottom: -2px;
+}
+
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px) scale(0.8);
+    }
+    60% {
+        transform: translateX(-50%) translateY(5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+.location-badge .badge-icon {
+    width: 24px;
+    height: 24px;
+    color: #16a34a;
+    flex-shrink: 0;
+    animation: ping 1.5s ease-in-out infinite;
+}
+
+@keyframes ping {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.location-badge .badge-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.location-badge .badge-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #15803d;
+    letter-spacing: 0.5px;
+}
+
+.location-badge .badge-coords {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: #166534;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .quick-form-grid-with-location {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .quick-location-btn {
+        width: 100%;
+        height: 44px;
+    }
+
+    .location-badge {
+        position: relative;
+        top: 12px;
+        left: 0;
+        right: 0;
+        min-width: auto;
+        padding: 12px 16px;
+    }
+
+    .location-badge::before,
+    .location-badge::after {
+        display: none;
+    }
+
+    .location-badge .badge-coords {
+        font-size: 13px;
+    }
+}

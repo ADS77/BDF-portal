@@ -1,0 +1,58 @@
+.donors-list {
+    margin-bottom: 2rem;
+}
+
+.donors-list-header {
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.donors-list-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.donors-list-subtitle {
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+.donors-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.donors-list-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.donors-list-empty-icon {
+    width: 5rem;
+    height: 5rem;
+    color: #d1d5db;
+    margin: 0 auto 1rem;
+}
+
+.donors-list-empty-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.donors-list-empty-text {
+    color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+    .donors-list-grid {
+        grid-template-columns: 1fr;
+    }
+}

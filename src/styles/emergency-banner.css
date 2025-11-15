@@ -1,0 +1,55 @@
+.emergency-banner {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    animation: bannerSlideIn 0.5s ease-out;
+}
+
+@keyframes bannerSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.emergency-banner-icon {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.emergency-banner-text {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.emergency-banner-contact {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+    .emergency-banner {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
