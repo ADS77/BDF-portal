@@ -53,15 +53,6 @@ export const QuickSearch = ({ onSearch, isLoading, onAdvancedClick }) => {
 
     const handleSubmit = () => {
         if (!validateForm()) return;
-     /*   const searchRequest = buildSearchRequest({
-            bloodGroup: quickSearchData.bloodGroup,
-            city: quickSearchData.city,
-            district: quickSearchData.district,
-            latitude: quickSearchData.latitude,
-            longitude: quickSearchData.longitude,
-            radius: 10,
-            emergencyLevel: 'NORMAL'
-        });*/
         const searchRequest = buildSearchRequest(quickSearchData);
         console.log("Search Request : ", searchRequest);
         onSearch(searchRequest);

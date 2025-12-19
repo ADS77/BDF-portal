@@ -22,7 +22,7 @@ export const DonorsList = ({ donors, onRequestBlood }) => {
                 <p className="donors-list-subtitle">Available donors matching your criteria</p>
             </div>
             <div className="donors-list-grid">
-                {donors.data.map(donor => (
+                {donors.map(donor => (
                     <DonorCard
                         key={donor.id}
                         donor={donor}
