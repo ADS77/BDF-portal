@@ -9,17 +9,18 @@ export class DonorSearchService {
                 body: JSON.stringify(searchRequest)
             });
 
-            const data = await response.json();
-
             if (!response.ok) {
-                throw new Error(data.message || 'Search failed');
+                throw new Error('Search failed');
             }
+
+            const result = await response.json();
+            console.log("Search Response : ", result);
 
             return {
                 success: true,
-                data: data.data || data,
-                message: data.message,
-                count: data.data?.length || 0
+                data: result.data.data,
+                count: result.data.count,
+                message: 'Search successful'
             };
         } catch (error) {
             console.error('Donor search error:', error);
@@ -27,7 +28,8 @@ export class DonorSearchService {
                 success: false,
                 error: error.message,
                 message: error.message || 'Network error. Please try again.',
-                data: []
+                data: [],
+                count: 0
             };
         }
     }

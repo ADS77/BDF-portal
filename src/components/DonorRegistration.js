@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { User, Mail, Phone, Droplet, MapPin, Building2, Map, Hash, CheckCircle, AlertCircle } from "lucide-react";
 import "../styles/donor-reg.css";
+import {defaultRegReq} from "../model/request/DefaultRequest";
 
 const BLOOD_GROUPS = [
     { value: 'A_POSITIVE', display: 'A+' },
@@ -20,21 +21,7 @@ const ROLES = [
 ];
 
 export const DonorRegistration = ({ onClose, onSuccess }) => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        role: 'DONOR',
-        bloodGroup: '',
-        geoLocation: {
-            address: '',
-            city: '',
-            district: '',
-            latitude: null,
-            longitude: null,
-            zipcode: ''
-        }
-    });
+    const [formData, setFormData] = useState(()=> structuredClone(defaultRegReq));
 
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -157,6 +144,9 @@ export const DonorRegistration = ({ onClose, onSuccess }) => {
         setSubmitStatus(null);
         setSubmitMessage('');
 
+        var requestData = JSON.stringify(formData);
+        console.log("Request Data : ", requestData);
+
         try {
             const response = await fetch('http://localhost:8088/api/user/register', {
                 method: 'POST',
@@ -176,7 +166,7 @@ export const DonorRegistration = ({ onClose, onSuccess }) => {
                     if (onSuccess) {
                         onSuccess(data);
                     }
-                    setFormData({
+                   /* setFormData({
                         name: '',
                         email: '',
                         phone: '',
@@ -190,7 +180,7 @@ export const DonorRegistration = ({ onClose, onSuccess }) => {
                             longitude: null,
                             zipcode: ''
                         }
-                    });
+                    });*/
                 }, 2000);
             } else {
                 setSubmitStatus('error');
